@@ -1,10 +1,10 @@
-module.exports = {
-  collapse: function (expand, arr) {
-    let $ = window.$;
-    let headers = $('.collapse').siblings(".card-header");
+
+export function collapse(expand: boolean, arr: Array<string>) : void {
+  /* //const $ = window.$;
+    const headers = $('.collapse').siblings(".card-header");
 
     for (let header of headers) {
-      let technologies = $(header).find(".technology");
+      const technologies = $(header).find(".technology");
       let found = false;
       for (let tech of technologies) {
         if (arr.includes($(tech).text())) {
@@ -18,6 +18,6 @@ module.exports = {
       } else if (!expand && !found) {
         $(header).siblings(".collapse").removeClass('show');
       }
-    }
+    }*/
   }
-};
+  

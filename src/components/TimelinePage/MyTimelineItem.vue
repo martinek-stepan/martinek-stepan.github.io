@@ -1,46 +1,54 @@
 <template>
-  <li class="timeline-item tl-gray rounded ml-3 p-4 shadow">
+<li class="timeline-item tl-gray rounded ml-3 p-4 shadow">
     <div class="timeline-arrow"></div>
     <MyCard :key="project.title" :project="project">
-      {{ project.title}}
+        {{ project.title}}
     </MyCard>
-  </li>
+</li>
 </template>
 
-<script>
-import MyCard from "@/components/MyCard";
+<script lang="ts">
+import {
+    defineComponent
+} from 'vue';
 
-export default {
-  components: {
-    MyCard
-  },
-  props: {
-    project: { type: Object, required: true},
-  }
-}
+import {
+    Project
+} from "@/helpers/interfaces";
+import MyCard from "@/components/TimelinePage/MyCard.vue";
+
+export default defineComponent({
+    components: {
+        MyCard
+    },
+    props: {
+        project: {
+            type: Object as() => Project,
+            required: true
+        },
+    }
+
+});
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-
-  li.timeline-item {
+<style>
+li.timeline-item {
     margin: 20px 0;
     background-color: white;
-  }
+}
 
-  /* Timeline item arrow */
-  .timeline-arrow {
+/* Timeline item arrow */
+.timeline-arrow {
     border-top: 0.5rem solid transparent;
     border-right: 0.5rem solid #fff;
     border-bottom: 0.5rem solid transparent;
     display: block;
     position: absolute;
     left: 2rem;
-  }
+}
 
-  /* Timeline item circle marker */
-  li.timeline-item::before {
+/* Timeline item circle marker */
+li.timeline-item::before {
     content: ' ';
     background: #ddd;
     display: inline-block;
@@ -52,5 +60,5 @@ export default {
     height: 14px;
     z-index: 400;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
+}
 </style>
