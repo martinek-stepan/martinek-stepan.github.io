@@ -270,11 +270,12 @@
   {
     "id": "portfoliovue",
     "title": "Portfolio webpage",
-    "technologies": ["vue", "javascript", "bootstrap", "html"],
+    "technologies": ["vue", "javascript", "typescript", "bootstrap", "html"],
     "date": "7/2020",
     "text": [
       "To present some of my personal and university projects I have decided to create this web portfolio",
-      "Originally the plan was to create simple static HTML page/ but after realizing how much copy-pasting I would have to do, I did what any programmer would and spend lot more time creating it in Vue to save little time when updating it :]"
+      "Originally the plan was to create simple static HTML page/ but after realizing how much copy-pasting I would have to do, I did what any programmer would and spend lot more time creating it in Vue to save little time when updating it :]",
+      "In September 2020 I have rewritten the app in Vue 3 and TypeScript"
     ],
     "repo": "https://github.com/martinek-stepan/ProtfolioVue"
   }
