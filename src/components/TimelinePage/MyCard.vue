@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div :id="project.id+'collapse'" class="collapse show" :aria-labelledby="project.id+'heading'">
+        <div :id="project.id+'collapse'" v-bind:class="{ 'collapse': true,  'show': canShow }" :aria-labelledby="project.id+'heading'">
             <div class="card-body">
                 <div class="row">
                     <div class="col">
@@ -60,8 +60,12 @@
 
 <script lang="ts">
 import {
-    defineComponent
+    defineComponent,
+    ref
 } from 'vue';
+import {
+    useStore
+} from '../../store';
 
 import {
     Project
@@ -74,6 +78,14 @@ import MyTechnology from "@/components/TimelinePage/MyTechnology.vue";
 
 export default defineComponent({
 
+    setup() {
+        const store = useStore();
+        const state = ref(store.state);
+
+        return {
+            state
+        };
+    },
     components: {
         MyTechnology,
         MyCardTabText,
@@ -85,6 +97,11 @@ export default defineComponent({
             type: Object as() => Project,
             required: true
         },
+    },
+    computed: {
+        canShow(): boolean {
+            return this.project.technologies.some(x => this.state.selectedTechnologies.includes(x));
+        }
     }
 
 });

@@ -1,52 +1,36 @@
 <template>
 <div class="timeline-page">
     <ul class="timeline">
-        <MyTimelineItem v-for="project in projects" v-bind:key="project.title" v-bind:project="project"></MyTimelineItem>
+        <MyTimelineItem v-for="project in state.projects" v-bind:key="project.title" v-bind:project="project"></MyTimelineItem>
     </ul>
-    <MyFloatingCard :projects="projects"></MyFloatingCard>
+    <MyFloatingCard></MyFloatingCard>
 </div>
 </template>
 
 <script lang="ts">
 import {
-    defineComponent
+    defineComponent,
+    ref
 } from 'vue';
 
-import {
-    Project
-} from "@/helpers/interfaces";
-
-import rawJson from '../json/data.json';
 import MyTimelineItem from "@/components/TimelinePage/MyTimelineItem.vue";
 import MyFloatingCard from "@/components/TimelinePage/MyFloatingCard.vue";
+import {
+    useStore
+} from '../store';
 
-const projectsData = rawJson as Array < Project > ;
-console.log(rawJson, projectsData);
 export default defineComponent({
+    setup() {
+        const store = useStore();
+        const state = ref(store.state);
+
+        return {
+            state
+        };
+    },
     components: {
         MyFloatingCard,
         MyTimelineItem
-    },
-    computed: {
-        projects: function () {
-            projectsData.sort(function (a: Project, b: Project) {
-                const aParts = a.date.split("/");
-                const bParts = b.date.split("/");
-                if (aParts[1] > bParts[1]) {
-                    return -1;
-                } else if (aParts[1] < bParts[1]) {
-                    return 1;
-                } else if (aParts[0] > bParts[0]) {
-                    return -1;
-                } else if (aParts[0] < bParts[0]) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            });
-            console.log(projectsData);
-            return projectsData;
-        }
     }
 
 });

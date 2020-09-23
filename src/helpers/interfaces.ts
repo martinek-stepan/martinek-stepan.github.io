@@ -1,7 +1,7 @@
 
 export interface ImageData {
     url: string;
-    height: number;
+    height?: number;
     caption: string;
 }
 

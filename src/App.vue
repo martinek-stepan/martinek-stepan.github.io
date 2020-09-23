@@ -8,23 +8,39 @@
     </div>
     <div class="row">
         <div class="col-lg-7 mx-auto">
-            <router-view />
+            <div class="d-flex justify-content-center" v-if="state.loadingState !== 'LOADED'">
+                <div class="spinner-border" role="status" v-if="state.loadingState === 'LOADING'">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <span v-else>{{"Loading error: "+state.loadingError}}</span>
+            </div>
+            <router-view v-else />
         </div>
     </div>
 </div>
 </template>
 
-<script>
-/*
-import MyTimeline from "@/components/MyTimeline";
+<script lang="ts">
+import {
+    defineComponent,
+    ref
+} from "vue";
+import {
+    ActionTypes,
+    useStore
+} from './store';
 
-export default {
-    name: 'App',
-    components: {
-        MyTimeline,
-    },
-}
-*/
+export default defineComponent({
+    setup() {
+        const store = useStore();
+        store.dispatch(ActionTypes.LOAD_PROJECTS, undefined);
+        const state = ref(store.state);
+
+        return {
+            state
+        };
+    }
+});
 </script>
 
 <style>

@@ -6,7 +6,7 @@
         </ol>
         <div class="carousel-inner">
             <div v-for="(item, index) in project.images" :key="index" :class="index === 0 ? 'carousel-item active' : 'carousel-item'">
-                <img class="d-block w-100" :src="item.url" :height="item.height || false" :alt="'Slide: '+index+1">
+                <img class="d-block w-100" :src="item.url" :height="item.height || 500" :alt="'Slide: '+index+1">
                 <div v-if="item.caption" class="carousel-caption d-none d-md-block">{{item.caption}}</div>
             </div>
         </div>

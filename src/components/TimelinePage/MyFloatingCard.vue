@@ -1,7 +1,7 @@
 <template>
 <div class="card floating-card">
     <div class="card-body">
-        <a href="#filter" v-for="tech in technologies" :key="tech" v-on:click.stop.prevent="techClick(tech)" v-bind:class="{ 'tech-item': true,  'text-secondary': !selected.includes(tech) }">{{tech}}</a>
+        <a href="#filter" v-for="tech in technologies" :key="tech" v-on:click.stop.prevent="techClick(tech)" v-bind:class="{ 'tech-item': true,  'text-secondary': !this.state.selectedTechnologies.includes(tech) }">{{tech}}</a>
         <div class="row">
             <a class="col-6 text-info" href="#filter" v-on:click.stop.prevent="colapseAll">Collapse all</a>
             <a class="col-6 text-info" href="#filter" v-on:click.stop.prevent="expandAll">Expand all</a>
@@ -12,56 +12,49 @@
 
 <script lang="ts">
 import {
-    defineComponent
+    defineComponent,
+    ref
 } from 'vue';
 
 import {
-    Project
-} from "@/helpers/interfaces";
-import {
-    collapse
-} from "../../helpers/collapseHelper";
+    MutationTypes,
+    useStore
+} from '../../store';
 
 export default defineComponent({
 
-    props: {
-        projects: {
-            type: Array as() => Array < Project > ,
-            required: true
+    setup() {
+        const store = useStore();
+        const state = ref(store.state);
+
+        const allTechnologies = new Set < string > ();
+        for (const project of store.state.projects) {
+            project.technologies.forEach(item => allTechnologies.add(item))
         }
-    },
-    data: function () {
+        const technologies = Array.from(allTechnologies).sort();
+        store.commit(MutationTypes.SET_TECHNOLOGY, technologies);
+
         return {
-            selected: [] as Array < string >
+            state,
+            store,
+            technologies
         };
-    },
-    computed: {
-        technologies: function (): Array < string > {
-            const allTechnologies = new Set < string > ();
-            for (const project of this.projects) {
-                (project.technologies as Array < string > ).forEach(item => allTechnologies.add(item))
-            }
-            return Array.from(allTechnologies).sort();
-        }
+
     },
     methods: {
         techClick: function (technology: string) {
-            const index = this.selected.indexOf(technology);
-            if (index !== -1) {
-                this.selected.splice(index, 1);
-                collapse(false, this.selected);
+            const index = this.state.selectedTechnologies.indexOf(technology);
+            if (index === -1) {
+                this.store.commit(MutationTypes.SELECT_TECHNOLOGY, technology)
             } else {
-                this.selected.push(technology);
-                collapse(true, this.selected);
+                this.store.commit(MutationTypes.DESELECT_TECHNOLOGY, technology)
             }
         },
         colapseAll: function () {
-            this.selected = [];
-            collapse(false, this.selected);
+            this.store.commit(MutationTypes.SET_TECHNOLOGY, []);
         },
         expandAll: function () {
-            this.selected = JSON.parse(JSON.stringify(this.technologies));
-            collapse(true, this.technologies);
+            this.store.commit(MutationTypes.SET_TECHNOLOGY, this.technologies);
         }
     }
 });
