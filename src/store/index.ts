@@ -82,15 +82,25 @@ const mutations: MutationTree<State> & Mutations = {
       payload.sort(function (a: Project, b: Project) {
         const aParts = a.date.split("/");
         const bParts = b.date.split("/");
-        if (aParts[1] > bParts[1]) {
+
+        const yearA = Number(aParts[1])
+        const yearB = Number(bParts[1])
+        const monthA = Number(aParts[0])
+        const monthB = Number(bParts[0])
+
+        if (yearA > yearB) {
             return -1;
-        } else if (aParts[1] < bParts[1]) {
+        }
+        else if (yearA < yearB) {
             return 1;
-        } else if (aParts[0] > bParts[0]) {
+        }
+        else if (monthA > monthB) {
             return -1;
-        } else if (aParts[0] < bParts[0]) {
+        }
+        else if (monthA < monthB) {
             return 1;
-        } else {
+        } 
+        else {
             return 0;
         }
     });
