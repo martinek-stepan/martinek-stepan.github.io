@@ -287,7 +287,7 @@
     "date": "8/2020",
     "text": [
       "Dark mode challenge made as part of job application for Morning Score",
-      "Aim was to enable using to dark-mode css in small pre-made React application",
+      "Aim was to enable using of dark-mode style in small pre-made React application. Full description can be found in Readme.md in GitHub repository",
       "I have used Rx.js library to create elegant solution using Observer patter, that can be easily scaled."
     ],
     "repo": "https://github.com/martinek-stepan/dark-mode-challenge"
