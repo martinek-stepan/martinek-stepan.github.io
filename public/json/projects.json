@@ -275,9 +275,22 @@
     "text": [
       "To present some of my personal and university projects I have decided to create this web portfolio",
       "Originally the plan was to create simple static HTML page/ but after realizing how much copy-pasting I would have to do, I did what any programmer would and spend lot more time creating it in Vue to save little time when updating it :]",
-      "In September 2020 I have rewritten the app in Vue 3 and TypeScript"
+      "In September 2020 I have rewritten the app in Vue 3 and TypeScript",
+      "Fully automated deployment using Github Actions and Github Pages"
     ],
-    "repo": "https://github.com/martinek-stepan/ProtfolioVue"
+    "repo": "https://github.com/martinek-stepan/martinek-stepan.github.io"
+  },
+  {
+    "id": "ms-dark-mode-challenge",
+    "title": "Dark mode coding challenge in React",
+    "technologies": ["react", "javascript", "rxjs"],
+    "date": "8/2020",
+    "text": [
+      "Dark mode challenge made as part of job application for Morning Score",
+      "Aim was to enable using to dark-mode css in small pre-made React application",
+      "I have used Rx.js library to create elegant solution using Observer patter, that can be easily scaled."
+    ],
+    "repo": "https://github.com/martinek-stepan/dark-mode-challenge"
   },
   {
     "id": "stream-csv-parser",
