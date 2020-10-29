@@ -17,14 +17,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Clean install dependencies
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install --frozen-lockfile
-
-      - name: Set git username and email
-        run: git config user.name "Stepan martinek" && git config user.email "ste.martinek+git@gmail.com"
+        run: npm ci
 
       - name: Run deploy script
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: run gh-pages-deploy
+        run: |
+          git config user.name "Stepan martinek" && git config user.email "ste.martinek+git@gmail.com"
+          npm run gh-pages-deploy
