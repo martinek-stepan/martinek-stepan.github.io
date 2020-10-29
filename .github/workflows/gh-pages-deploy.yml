@@ -19,7 +19,7 @@ jobs:
       - name: Clean install dependencies
         uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: yarn install --frozen-lockfile
+          cmd: install --frozen-lockfile
 
       - name: Set git username and email
         run: git config user.name "Stepan martinek" && git config user.email "ste.martinek+git@gmail.com"
@@ -27,4 +27,4 @@ jobs:
       - name: Run deploy script
         uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: yarn run gh-pages-deploy
+          cmd: run gh-pages-deploy
