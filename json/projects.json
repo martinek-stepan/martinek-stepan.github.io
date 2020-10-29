@@ -1,0 +1,311 @@
+[
+  {
+    "id": "bac",
+    "title": "Bachelor thesis",
+    "date": "6/2018",
+    "technologies": ["kotlin", "javascript", "nodejs", "android", "realm", "mysql", "docker"],
+    "text": [
+      "My bachelor thesis was about possibilities to help improve the self-esteem of a person by gamification and utilizations of so-called “serious games”. Server in Node.js & MySQL and Android client in Kotlin were made for this prototype.",
+      "To achieve that there is the main “serious game” where a player is taking care of a plant and trying to make it grow. To achieve that, the flower needs to be watered, get sunlight and fertilizer. To do so the player pays with coins, which can be obtained by fulfilling therapeutic tasks and minigames.",
+      "Implemented tasks:",
+      [
+        "Self-reflection",
+        "Self-supporting arguments",
+        "Achievements"
+      ],
+      "All the task require user submit text responses. A special task is “Validating of others” which allows you to anonymously validate some of the answers by other players. That aim to reduce the cost of running the game.",
+      "Minigames:",
+      [
+        "Pexeso (match smiley faces)",
+        "Matrix (find all smiling faces in the matrix of faces)"
+      ]
+    ],
+    "repo": "https://github.com/martinek-stepan/BachelorThesis",
+    "video": "https://www.youtube.com/embed/mW8zP5cPj64",
+    "images": [
+      {
+        "url": "https://github.com/martinek-stepan/BachelorThesis/raw/master/media/image3.png",
+        "height": 500,
+        "caption": "Flower user is growing"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/BachelorThesis/raw/master/media/image4.png",
+        "height": 500,
+        "caption": "Matrix minigame"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/BachelorThesis/raw/master/media/image5.png",
+        "height": 500,
+        "caption": "Tasks and minigames menu"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/BachelorThesis/raw/master/media/image6.png",
+        "height": 500,
+        "caption": "Show where user can buy seeds of new flowers"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/BachelorThesis/raw/master/media/image7.png",
+        "height": 500,
+        "caption": "Pexeso minigame"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/BachelorThesis/raw/master/media/image8.png",
+        "height": 500,
+        "caption": "Self-reflexion task"
+      }
+    ]
+  },
+  {
+    "id": "scounter",
+    "title": "Score Counter",
+    "technologies": ["java", "android", "sqlite"],
+    "date": "12/2015",
+    "text": [
+      "Score Counter is one of my oldest and at the same time most useful Android application. It is written in Java, using SQLite for the database.",
+      "The goal of the application is to provide a good, customizable score counter that can be used for a great number of different board games.",
+      "Features:",
+      [
+        "Naming players",
+        "Custom background colour for a player",
+        "Switching player columns",
+        "Use either dynamic buttons (under last score row) or static buttons (always in the lower part of the screen)",
+        "Show subtotals",
+        "Change the color of specific score text",
+        "Change/Remove score",
+        "Possibility of different customize game modes with features",
+        "Constant score (+ & - buttons are used instead of typing number)",
+        "Only positive score",
+        "Strict rounds (player have to add a score in order)",
+        "Maximum rounds",
+        "Winning score",
+        "Finish round (When strict rounds and winning score is enabled)",
+        "Lowest score win"
+      ]
+    ],
+    "repo": "https://github.com/martinek-stepan/ScoreCounter",
+    "video": "https://www.youtube.com/embed/Kau9fXYRTbc",
+    "images": [
+      {
+        "url": "https://github.com/martinek-stepan/ScoreCounter/raw/master/media/SC-Main.png",
+        "height": 500,
+        "caption": "Main activity"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/ScoreCounter/raw/master/media/SC-PlayerEdit.png",
+        "height": 500,
+        "caption": "Player settings"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/ScoreCounter/raw/master/media/SC-ScoreEdit.png",
+        "height": 500,
+        "caption": "Score setting"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/ScoreCounter/raw/master/media/SC-ManageGameModes.png",
+        "height": 500,
+        "caption": "Game modes activity"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/ScoreCounter/raw/master/media/SC-GameModeSettings.png",
+        "height": 500,
+        "caption": "Game mode options"
+      }
+    ]
+  },
+  {
+    "id": "olts",
+    "title": "One Line to Shine",
+    "technologies": ["swift", "ios"],
+    "date": "10/2017",
+    "text": [
+      "One Line to Shine to shine is semester project for an iOS course I have taken at the University of Southern Denmark. The requirements for the project were to make an application or game that utilize some kind of sensor.",
+      "I have decided to create a game based on one-line drawing, where the drawing is done with physical movement utilizing GPS. In the game, the player selects pattern he wants to draw and can adjust it with rotation and pinch to make all points accessible.",
+      "When the game starts, the player can lock/unlock points that are less than 5 meters away from him. It is only possible to lock a point when it is neighbour with last locked point (or is the first point user is trying to lock)."
+    ],
+    "repo": "https://github.com/martinek-stepan/OneLineToShine",
+    "video": "https://www.youtube.com/embed/hBSm9bnxgUo"
+  },
+  {
+    "id": "sdupoolical",
+    "title": "SDU Pool iCal generator",
+    "technologies": ["dart"],
+    "date": "10/2018",
+    "text": [
+      "Since the schedule for students to access the swimming pool is not very intuitive I wanted to create a generator that would transform it into iCal object.",
+      "Unfortunately, it turned to be impossible to get data in any computer-readable form from SDU, so I had to data-mine the schedule from PDF posted to the website.",
+      "The process is composed of these steps:",
+      [
+        "Retrieve PDF from website",
+        "Check if it is different from the one we already have",
+        "Convert PDF into XLSX using 3rd party web service",
+        "Parse XLSX to retrieve data",
+        "Generate iCal object",
+        "Rename newPdf to oldPdf for comparison in next iteration"
+      ]
+    ],
+    "repo": "https://github.com/martinek-stepan/PoolSDUiCalGenerator"
+  },
+  {
+    "id": "mailmigrator",
+    "title": "Mail Migrator",
+    "technologies": ["cpp", "sqlite", "threads"],
+    "date": "4/2017",
+    "text": [
+      "Mail migrator was created as part of a job interview.",
+      "The tasks were to:",
+      [
+        "Define database structure for users of groupware server according to the specified structure",
+        "Create an email migration tool that migrated .imap files from specified folder hierarchy into the created database"
+      ],
+      "This solution is written in C++ with utilization",
+      [
+        "C++11",
+        "SQLite for the database (for portability of solution)",
+        "std::filesystem (in the time of creation experimental part of std, which could have been replaced by boost::filesystem in real use scenario)",
+        "Multithreading – With the utilization of thread pool"
+      ]
+    ],
+    "repo": "https://github.com/martinek-stepan/MailMigrator"
+  },
+  {
+    "id": "htmlselected",
+    "title": "HTMLSelecter",
+    "technologies": ["dart"],
+    "date": "10/2018",
+    "text": [
+      "HTMLSelecter is Dart package inspired by jQuery HTML selectors. Advantage of this package is that it works in all Dart environments not only on the web.",
+      "Package support these selectors",
+      [
+        "* - All elements",
+        ".className",
+        "#id",
+        "elementIdentifier",
+        "[customAttribute]"
+      ],
+      "And relationships:",
+      [
+        "> – Direct child",
+        "+ – Same level",
+        "~ – Siblings",
+        "<space> – All descendants"
+      ]
+    ],
+    "repo": "https://github.com/martinek-stepan/HTMLSelecter"
+  },
+  {
+    "id": "des",
+    "title": "DES encryption algorithm",
+    "technologies": ["cpp"],
+    "date": "4/2018",
+    "text": [
+      "The goal of this university project was not efficiency, readability and possibility to follow the process of DES algorithm. It is written in modern C++.",
+      "Mainly two features of modern C++ were utilized:",
+      [
+        "Bitsets – To allow easy bit manipulation and debug logging",
+        "Templated functions – To limit code duplicity"
+      ]
+    ],
+    "repo": "https://github.com/martinek-stepan/DES"
+  },
+  {
+    "id": "fatsim",
+    "title": "FAT32 filesystem simulation",
+    "technologies": ["cpp", "threads"],
+    "date": "1/2017",
+    "text": [
+      "In this university project, the goal was to create a program that simulates some parts of FAT32 filesystem. This solution is written in C++ using multi-threading and Producer-Consumer pattern."
+    ],
+    "repo": "https://github.com/martinek-stepan/FATSim"
+  },
+  {
+    "id": "dronapp",
+    "title": "DronApp contest application",
+    "technologies": ["kotlin", "android"],
+    "date": "4/2017",
+    "text": [
+      "In DronApp teams of up to three people were tasked with creating a mobile application utilizing DJI Drone API. My team set a goal for this application to be intuitive and utilize as my features provided by DJI framework as possible.",
+      "This application placed 2nd in the contest."
+    ],
+    "repo": "https://github.com/martinek-stepan/DronApp",
+    "images": [
+      {
+        "url": "https://github.com/martinek-stepan/DronApp/raw/master/media/main.PNG",
+        "caption": "1 - Signal strength indicator of remote control 2 - Battery level indicator of remote control 3 -Selected flight mode 4 - Smart functions menu 5 - GPS signal strength indicator 6 - Number of visible GPS satellites indicator 7 -Quality of video transmission 8 -Signal strength indicator of drone 9 - Battery level indicator of drone 10 - Battery level indicator of mobile phone/tablet 11 - Settings button 12 - Selfie smart function butt (Camera would keep rotating to keep facing position of the user) 13 - Gimbal reset button 14 - Automatic landing/liftoff button 15 - Maximum brightness setting 16 - Video crop switch 17 - Altitude graph switch 18 - Altitude graph 19 - Approximation to NO-FLY zone indicator 20 - Low battery indicator 21 - Switch between taking picture and video 22 - Camera trigger 23 - Flight data 24 - Minimap (On click it was possible to switch between minimap and camera feed for the main screen and PiP)"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/DronApp/raw/master/media/missions.PNG",
+        "height": 500,
+        "caption": "F-GPS mode functions selection"
+      }
+    ]
+  },
+  {
+    "id": "masterthesis",
+    "title": "Master thesis prototype",
+    "technologies": ["dart", "flutter", "android", "ios"],
+    "date": "6/2020",
+    "text": [
+      "In my master thesis at the University of Southern Denmark, I have analyzed multiple different cross-platform frameworks to select one to make a prototype of Table reservation application in. As a result of the analysis, Flutter was deemed most suitable.",
+      "This prototype is very simple, using mainly default framework widgets. One of the focus with selection and creation of the prototype was the ability to asynchronously retrieve data and update UI afterwise."
+    ],
+    "repo": "https://github.com/martinek-stepan/MasterThesisPrototype",
+    "images": [
+      {
+        "url": "https://github.com/martinek-stepan/MasterThesisPrototype/raw/master/media/image11.png",
+        "height": 500,
+        "caption": "Filters selection card"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/MasterThesisPrototype/raw/master/media/image12.png",
+        "height": 500,
+        "caption": "List of restaurants"
+      },
+      {
+        "url": "https://github.com/martinek-stepan/MasterThesisPrototype/raw/master/media/image13.png",
+        "height": 500,
+        "caption": "Restaurant detail"
+      }
+    ]
+  },
+  {
+    "id": "portfoliovue",
+    "title": "Portfolio webpage",
+    "technologies": ["vue", "javascript", "typescript", "bootstrap", "html"],
+    "date": "7/2020",
+    "text": [
+      "To present some of my personal and university projects I have decided to create this web portfolio",
+      "Originally the plan was to create simple static HTML page/ but after realizing how much copy-pasting I would have to do, I did what any programmer would and spend lot more time creating it in Vue to save little time when updating it :]",
+      "In September 2020 I have rewritten the app in Vue 3 and TypeScript",
+      "Fully automated deployment using Github Actions and Github Pages"
+    ],
+    "repo": "https://github.com/martinek-stepan/martinek-stepan.github.io"
+  },
+  {
+    "id": "ms-dark-mode-challenge",
+    "title": "Dark mode coding challenge in React",
+    "technologies": ["react", "javascript", "rxjs"],
+    "date": "8/2020",
+    "text": [
+      "Dark mode challenge made as part of job application for Morning Score",
+      "Aim was to enable using of dark-mode style in small pre-made React application. Full description can be found in Readme.md in GitHub repository",
+      "I have used Rx.js library to create elegant solution using Observer patter, that can be easily scaled."
+    ],
+    "repo": "https://github.com/martinek-stepan/dark-mode-challenge"
+  },
+  {
+    "id": "stream-csv-parser",
+    "title": "Stream CSV Parser",
+    "technologies": ["typescript", "nodejs", "npm", "jest"],
+    "date": "10/2020",
+    "text": [
+     "Simple stream based CSV parser",
+      [
+      "Based on RFC 4180, with the exception that headers can also be escaped and TEXTDATA are not limited by sequences",
+      "Option to change escape sequence, rowBreak sequence, columnBreak sequence",
+      "100% code coverage with unit test and utilization of Jest testing framework",
+      "Originally made as part of coding challenge for Morning Train"
+      ]
+    ],
+    "repo": "https://github.com/martinek-stepan/CSV-parser"
+  } 
+]
